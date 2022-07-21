@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=testdb
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    ports:
+      - "9000:9000"
+    depends_on:
+      - postgres
+
+volumes:
+  db-data:
