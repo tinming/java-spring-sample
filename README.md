@@ -71,27 +71,3 @@ After logging in, go to `http://localhost:9000/accounts` to get all accounts or 
 ## Running on Production
 
 On production, run `java -jar <jar_filename>.jar -Dspring.config.location=file:"<config_directory_with_trail>"`.
-
-## Thoughts
-
-Initially, I wanted to created a Restful API application that can help me call Xero API. As the application grew, I realize using Spring Boot and creating a Restful API application was too ambitious so I had to cut scope and create a prototype application that is not ready for customer use.
-
-### Assumptions
-
-- Xero API: I didn't find "Vendors" so I assumed it was "Contacts".
-
-### TODOs
-Here is a list of TODOs to make application "production ready":
-
-- Add Async for 3rd party API and database calls
-- Create user model for users to login to my application. A user may have one or many Tenant IDs
-- Associate Tenant IDs with Accounts and Vendors
-- Each user should have their own Oauth Token to Xero API
-- Add more test cases. I've only created a few for demonstration purposes
-- Better error handling. Exceptions are not being handled properly
-- Add caching either with Memcached or Redis
-- Create a front-end application to consume the API I created. I was thinking of using React or Angular
-- Docker production deployment
-- Versioning for release
-- Instructions for loading project into SpringToolSuite
-...and many more
